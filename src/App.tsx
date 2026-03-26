@@ -107,8 +107,8 @@ const DEFAULT_CONFIGS = {
   'site.title': '导航站',
   'site.name': '导航站',
   'site.customCss': '',
-  'site.backgroundImage': '', // 背景图片URL
-  'site.backgroundOpacity': '0.15', // 背景蒙版透明度
+  'site.backgroundImage': 'https://www.dmoe.cc/random.php', // 背景图片URL
+  'site.backgroundOpacity': '0.65', // 背景蒙版透明度
   'site.iconApi': 'https://www.faviconextractor.com/favicon/{domain}?larger=true', // 默认使用的API接口，带上 ?larger=true 参数可以获取最大尺寸的图标
 };
 
@@ -290,7 +290,10 @@ function App() {
     api.logout();
     setIsAuthenticated(false);
     setIsAuthRequired(false); // 游客仍可浏览
-    
+
+    // 清空数据并重新加载（游客数据）
+    fetchData();
+    fetchConfigs();
     handleMenuClose();
 
     // 刷新页面
