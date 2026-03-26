@@ -295,7 +295,8 @@ function App() {
     fetchData();
     fetchConfigs();
     handleMenuClose();
-
+    // 显示提示信息
+    setError('已退出登录');
     // 刷新页面
     window.location.reload();
   };
