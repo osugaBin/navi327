@@ -290,14 +290,11 @@ function App() {
     api.logout();
     setIsAuthenticated(false);
     setIsAuthRequired(false); // 游客仍可浏览
-
-    // 清空数据并重新加载（游客数据）
-    fetchData();
-    fetchConfigs();
+    
     handleMenuClose();
 
-    // 显示提示信息
-    setError('已退出登录');
+    // 刷新页面
+    window.location.reload();
   };
 
   // 打开登录对话框
